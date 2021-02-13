@@ -8,7 +8,7 @@ from sklearn.metrics import classification_report, confusion_matrix, accuracy_sc
 import numpy as np
 
 
-class trainer(base_page):
+class trainer(param.Parameterized):
     
     display_df = param.DataFrame(default = pd.DataFrame())
     
@@ -22,7 +22,7 @@ class trainer(base_page):
     
     def __init__(self, **params):
         super().__init__(**params)
-        self.param.name_of_page.default = 'Test and Train'
+        self.name_of_page = 'Test and Train'
         
         self.test_slider = pn.widgets.IntSlider(name='Test Percentage', start=0, end=100, step=10, value=20)
 
@@ -123,7 +123,7 @@ class trainer(base_page):
         
         return pn.Row(
                 pn.Column(
-                    pn.pane.Markdown(f'##{self.param.name_of_page.default}'),
+                    pn.pane.Markdown(f'##Train and Test'),
                     self.options_page,
                 ),
                 pn.Column(
