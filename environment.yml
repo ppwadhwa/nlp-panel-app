@@ -1,0 +1,17 @@
+name: panel-nlp
+channels:
+  - defaults
+dependencies:
+  - python=3.6
+  - jupyterlab
+  - panel
+  - spark-nlp
+  - pandas
+  - nodejs
+  - bokeh
+  - holoviews
+  - nltk
+  - scikit-learn
+  - xgboost
+  - seaborn
+prefix: /Users/pam/opt/anaconda3/envs/panel-nlp
